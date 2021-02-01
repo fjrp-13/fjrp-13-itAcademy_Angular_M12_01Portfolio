@@ -54,7 +54,7 @@
                                    formControlName="name"
                                    [class.is-invalid]="isNameInvalid"
                                    autofocus />
-                            <div *ngIf="isNameInvalid" class="validate validate-error">Dato obligatorio</div>
+                            <div *ngIf="isNameInvalid" class="validate validate-error">Required field</div>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="email" class="required">Your Email</label>
@@ -66,7 +66,7 @@
                                    data-msg="Please enter a valid email"
                                    formControlName="email"
                                    [class.is-invalid]="isEmailInvalid" />
-                            <div *ngIf="isEmailInvalid" class="validate validate-error">Email incorrecto</div>
+                            <div *ngIf="isEmailInvalid" class="validate validate-error">Incorrect Email</div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -79,7 +79,7 @@
                                data-msg="Please enter at least 8 chars of subject"
                                formControlName="subject"
                                [class.is-invalid]="isSubjectInvalid" />
-                        <div *ngIf="isSubjectInvalid" class="validate validate-error">Dato obligatorio</div>
+                        <div *ngIf="isSubjectInvalid" class="validate validate-error">Required field</div>
                     </div>
                     <div class="form-group">
                         <label for="message" class="required">Message</label>
@@ -90,7 +90,7 @@
                                   data-msg="Please write something for us"
                                   formControlName="message"
                                   [class.is-invalid]="isMessageInvalid"></textarea>
-                        <div *ngIf="isMessageInvalid" class="validate validate-error">Dato obligatorio</div>
+                        <div *ngIf="isMessageInvalid" class="validate validate-error">Required field</div>
                     </div>
                     <div class="mb-3">
                         <div class="loading">Loading</div>
