@@ -24,10 +24,8 @@ export class AppComponent implements OnInit {
       var rt = this.getChild(this.activatedRoute);
 
       rt.data.subscribe(data => {
-        console.log("data.title", data.title);
         this.titleService.setTitle(data.title)
 
-        console.log(data.description);
         if (data.description) {
           this.metaService.updateTag({ name: 'description', content: data.description })
         } else {

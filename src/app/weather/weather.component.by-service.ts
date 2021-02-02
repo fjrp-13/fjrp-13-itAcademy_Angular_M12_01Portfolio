@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-// import { WeatherService } from '../services/weather.service';
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { WeatherService } from '../services/weather.service';
 
 @Component({
   selector: 'app-weather',
@@ -26,7 +24,7 @@ export class WeatherComponent implements OnInit {
     icon      : ''
   };
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+  constructor(private fb: FormBuilder, private weatherService: WeatherService) {
     this.createForm();
   }
 // this.formWeather.get('city').value
@@ -78,7 +76,8 @@ export class WeatherComponent implements OnInit {
 
   getCityWeather(city: string) {
     this.cityNotFound = false;
-    this.getWeather(city)
+    this.weatherService
+    .getWeather(city)
     .subscribe(
       resp  => {
         this.fillWeatherData(resp);
@@ -88,27 +87,6 @@ export class WeatherComponent implements OnInit {
       }
     );
   }
-
-  getWeather(query:string) {
-    const API_KEY = "cde8a0c6c5e337bf5a1458b38fc4e1ea";
-    let API_URL = `http://api.openweathermap.org/data/2.5/weather?q={{query}}&appid=${API_KEY}&lang=es&units=metric`;
-  
-    let url = API_URL.replace('{{query}}', query);
-    return this.http.get(url)
-    .pipe(map( (resp:any) => {
-      return {
-        date: new Date(resp.dt * 1000).toLocaleString("es-ES"),
-        city: resp.name,
-        temp: resp.main.temp,
-        realFeel: resp.main.feels_like,
-        desc: resp.weather[0].description,
-        wind: resp.wind.speed,
-        humid: resp.main.humidity,
-        icon: resp.weather[0].icon
-      }
-    }));
-  }
-
   submit() {
     // this.formSubmitted = true;
     this.cityNotFound = false;

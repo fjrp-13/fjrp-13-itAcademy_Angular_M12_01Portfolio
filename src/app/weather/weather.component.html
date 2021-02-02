@@ -29,7 +29,6 @@
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="submit" id="btnSearch">
                                     <i class="fa fa-search" aria-hidden="true"></i>
-                                    Search weather
                                 </button>
                             </div>
                         </div>
@@ -41,10 +40,10 @@
                             <div class="d-flex">
                                 <div class="temp-details flex-grow-1">
                                     <h6 class="flex-grow-1">{{data.city}}</h6>
-                                    <h6>{{data.date | date:'dd/MM/yyyy hh:mm:ss'}}</h6>
+                                    <h6>{{data.date | date:'dd/MM/yyyy HH:mm:ss'}}</h6>
                                     <h1 class="mb-0 font-weight-bold" id="heading"> {{data.temp | number:'':'es'}}° C
                                     </h1>
-                                    <span class="small grey">{{data.desc}}</span>
+                                    <span class="small grey">{{data.desc | titlecase:true}}</span>
                                     <p class="my-1">
                                         <i class="fa fa-wind fa-fw mr-2"></i>
                                         <span *ngIf="isThereWind"> {{data.wind | number:'':'es'}} km/h </span>

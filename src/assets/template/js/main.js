@@ -11,7 +11,6 @@
   if ($('.typed').length) {
     var typed_strings = $(".typed").data('typed-items');
     typed_strings = typed_strings.split(',');
-    console.log(typed_strings);
     new Typed('.typed', {
       strings: typed_strings,
       loop: true,
