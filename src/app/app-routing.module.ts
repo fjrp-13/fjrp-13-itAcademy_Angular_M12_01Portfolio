@@ -78,13 +78,18 @@ const routes: Routes = [
     component:  WeatherComponent
   },
   {
+    path:  '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
     path:  '**',
-    redirectTo: 'home', pathMatch: 'full'
+    redirectTo: 'home'
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
