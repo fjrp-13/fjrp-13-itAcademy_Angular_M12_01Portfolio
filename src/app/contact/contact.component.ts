@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Meta, MetaDefinition } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact',
