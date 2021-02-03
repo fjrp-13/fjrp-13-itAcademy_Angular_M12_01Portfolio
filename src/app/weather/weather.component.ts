@@ -91,7 +91,7 @@ export class WeatherComponent implements OnInit {
 
   getWeather(query:string) {
     const API_KEY = "cde8a0c6c5e337bf5a1458b38fc4e1ea";
-    let API_URL = `http://api.openweathermap.org/data/2.5/weather?q={{query}}&appid=${API_KEY}&lang=es&units=metric`;
+    let API_URL = `https://api.openweathermap.org/data/2.5/weather?q={{query}}&appid=${API_KEY}&lang=es&units=metric`;
   
     let url = API_URL.replace('{{query}}', query);
     return this.http.get(url)

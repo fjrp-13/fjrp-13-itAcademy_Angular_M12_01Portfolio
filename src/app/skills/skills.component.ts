@@ -9,7 +9,7 @@ import { Meta, MetaDefinition } from '@angular/platform-browser';
 export class SkillsComponent implements OnInit {
 
   constructor() {
-    this.loadScripts();
+    // this.loadScripts();
   }
 
   ngOnInit(): void {

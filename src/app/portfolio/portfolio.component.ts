@@ -9,7 +9,7 @@ import { Meta, MetaDefinition } from '@angular/platform-browser';
 export class PortfolioComponent implements OnInit {
 
   constructor() {
-    this.loadScripts();
+    //this.loadScripts();
   }
 
   ngOnInit(): void {

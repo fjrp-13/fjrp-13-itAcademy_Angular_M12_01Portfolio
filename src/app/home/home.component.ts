@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta, MetaDefinition } from '@angular/platform-browser';
+//import { Meta, MetaDefinition } from '@angular/platform-browser';
+declare var jQuery: any;
+declare var typedEffect: any;
+
+
+// function initHome2($: any) {
+//   console.log("initHome2");
+//   console.log($.trim("    - init home 2 -           "));
+// };
 
 @Component({
   selector: 'app-home',
@@ -9,10 +17,13 @@ import { Meta, MetaDefinition } from '@angular/platform-browser';
 export class HomeComponent implements OnInit {
 
   constructor() {
-    this.loadScripts();
+    //this.loadScripts();
   }
 
   ngOnInit(): void {
+    (function ($) {
+      typedEffect();
+    })(jQuery);
   }
 
   // Method to dynamically load JavaScript 
